@@ -3,7 +3,7 @@ RIGHT_HIP = 24
 LEFT_KNEE = 25
 RIGHT_KNEE = 26
 
-def check_depth(result):
+def check_squat(result):
     if not result.pose_landmarks:
         return None
 
