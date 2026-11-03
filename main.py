@@ -35,21 +35,21 @@ while True:
             hip_y = squat.check_hip(result)
 
             if hip_y is None:
-                # No person in view
+                #No person in view
                 hold_start_y = None
 
             elif hold_start_y is None:
-                # First frame
+                #First frame
                 hold_start_y = hip_y
                 hold_start_time = time.time()
 
             elif abs(hip_y - hold_start_y) > PAUSE_RANGE:
-                # Lifter moved too much
+                #Lifter moved too much
                 hold_start_y = hip_y
                 hold_start_time = time.time()
 
             elif time.time() - hold_start_time >= HOLD_TIME:
-                # Good pause
+                #Good pause
                 lockout_hip_y = hip_y
                 play_audio(1320)
 
@@ -87,7 +87,7 @@ while True:
     if key == ord(" "):
         break
     elif key == ord("r"):
-        #forget the saved lockout and recalibrate 
+        #Forget the saved lockout and recalibrate 
         lockout_hip_y = None
         hold_start_y = None
 
